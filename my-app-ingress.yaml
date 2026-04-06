@@ -2,16 +2,14 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: erdem-ingress
-  namespace: default
   annotations:
     kubernetes.io/ingress.class: nginx
-    # BURASI KRİTİK: Yukarıdaki issuer'ı kullan diyoruz
     cert-manager.io/issuer: "selfsigned-issuer"
 spec:
   tls:
   - hosts:
     - 4.175.12.234.nip.io
-    secretName: erdem-app-tls # Sertifika buraya kaydedilecek
+    secretName: erdem-app-tls
   rules:
   - host: 4.175.12.234.nip.io
     http:
