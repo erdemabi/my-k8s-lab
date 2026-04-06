@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: erdem-app
 spec:
-  replicas: 3 # Buraya dikkat! Birazdan bunu değiştireceğiz.
+  replicas: 4 # Buraya dikkat! Birazdan bunu değiştireceğiz.
   selector:
     matchLabels:
       app: erdem-app
