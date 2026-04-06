@@ -4,7 +4,6 @@ metadata:
   name: letsencrypt-prod
 spec:
   acme:
-    # Let's Encrypt'in kayıt tutması için mail adresin
     email: erdemabi@gmail.com 
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
