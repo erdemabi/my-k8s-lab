@@ -3,7 +3,6 @@ kind: Ingress
 metadata:
   name: erdem-ingress
   annotations:
-    # Bu satır çok kritik, trafiği nginx'in yöneteceğini söyler
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
@@ -13,6 +12,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: <SENIN-SERVIS-ADIN> # Burayı yukarıda not ettiğin adla değiştir
+            name: erdem-app
             port:
-              number: 80 # Servisin portu neyse o
+              number: 80
