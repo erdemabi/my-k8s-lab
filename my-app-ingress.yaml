@@ -12,6 +12,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: erdem-app
+            name: guestbook-ui # Burayı düzelttik!
             port:
               number: 80
