@@ -4,14 +4,22 @@ metadata:
   name: erdem-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
+    # Şimdilik Let's Encrypt yerine Cert-Manager'ın kendi 
+    # oluşturacağı geçici bir sertifikayı kullanalım
+    cert-manager.io/issue-temporary-certificate: "true"
 spec:
+  tls:
+  - hosts:
+    - 4.175.12.234.nip.io # IP'ni buraya gömdük
+    secretName: erdem-app-tls
   rules:
-  - http:
+  - host: 4.175.12.234.nip.io
+    http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: guestbook-ui # Burayı düzelttik!
+            name: guestbook-ui
             port:
               number: 80
