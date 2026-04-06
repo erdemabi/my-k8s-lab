@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: erdem-ingress
+  annotations:
+    # Bu satır çok kritik, trafiği nginx'in yöneteceğini söyler
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: <SENIN-SERVIS-ADIN> # Burayı yukarıda not ettiğin adla değiştir
+            port:
+              number: 80 # Servisin portu neyse o
